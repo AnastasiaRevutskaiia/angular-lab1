@@ -1,0 +1,14 @@
+<p>custom-component works!</p>
+<p [ngClass]= "{ 'bold': isLoggedIn }"> Hello, {{userName}} </p>
+
+<input [(ngModel)]='user.name'/>
+<input [(ngModel)]='user.age'/>
+<input [ngModel]='userName'/>
+
+<!-- <app-profile user="{{userName}}"></app-profile> -->
+<app-profile *ngIf="user.name === 'Nastia'" [user]="user" (onlogout)="onLogout($event)"></app-profile>
+
+<p>My list</p>
+<ul>
+    <li [appZoom]="20" *ngFor="let article of articles">{{article}}</li>
+</ul>
